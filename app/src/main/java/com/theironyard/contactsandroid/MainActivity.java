@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     EditText name;
     EditText phoneNumber;
     Button add;
-    ArrayAdapter<Contact> contacts;
+    ArrayAdapter<String> contacts;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,8 +35,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         String contactName = name.getText().toString();
         String contactNumber = phoneNumber.getText().toString();
         Contact contact = new Contact(contactName, contactNumber);
-        contacts.add(contact);
-        list.setAdapter(contacts);
+        contacts.add(contactName + " (" + contactNumber + ")");
+
         name.setText("");
         phoneNumber.setText("");
     }
