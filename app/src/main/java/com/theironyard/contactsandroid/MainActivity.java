@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         String contactNumber = phoneNumber.getText().toString();
         Contact contact = new Contact(contactName, contactNumber);
         contacts.add(contact);
+        list.setAdapter(contacts);
         name.setText("");
         phoneNumber.setText("");
     }
