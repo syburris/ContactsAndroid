@@ -25,7 +25,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         name = (EditText) findViewById(R.id.name);
         phoneNumber = (EditText) findViewById(R.id.number);
         onAdd = (Button) findViewById(R.id.button);
-
         onAdd.setOnClickListener(this);
 
     }
