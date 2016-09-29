@@ -13,8 +13,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     ListView list;
     EditText name;
     EditText phoneNumber;
-    Button add;
-    ArrayAdapter<String> contacts;
+    Button onAdd;
+    ArrayAdapter<String> contacts = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,9 +24,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         list = (ListView) findViewById(R.id.list);
         name = (EditText) findViewById(R.id.name);
         phoneNumber = (EditText) findViewById(R.id.number);
-        add = (Button) findViewById(R.id.button);
+        onAdd = (Button) findViewById(R.id.button);
 
-        add.setOnClickListener(this);
+        onAdd.setOnClickListener(this);
 
     }
 
@@ -34,9 +34,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         String contactName = name.getText().toString();
         String contactNumber = phoneNumber.getText().toString();
-        Contact contact = new Contact(contactName, contactNumber);
         contacts.add(contactName + " (" + contactNumber + ")");
-
         name.setText("");
         phoneNumber.setText("");
     }
